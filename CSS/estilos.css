@@ -1,0 +1,516 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root{
+    --padding-container: 100px 0;
+    --color-title: #001A49;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+}
+
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--padding-container);
+}
+
+.hero{
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    max-height: 800px;
+    position: relative;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    color: white;
+}
+
+.hero::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url('../Images/Computadora.png');
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 50% 100%, 0 95%);
+    z-index: -1;
+}
+
+.nav{
+    --padding-container:0;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.hero_container{
+    --padding-container:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1.5em;
+}
+
+.nav_title{
+    font-weight: 300;
+}
+
+.nav_items{
+    list-style: none;
+}
+
+.nav_link--menu{
+    margin-left: auto;
+    padding: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 1.5em;
+}
+
+.nav_link{
+    color: white;
+    text-decoration: none;
+}
+
+.nav_menu{
+    margin-left: auto;
+    cursor: pointer;
+    display: none;
+}
+.nav_img{
+    display: block;
+    width: 30px;
+}
+
+.nav_close{
+    display: var(--show, none);
+}
+
+.hero_title{
+    font-size: 3rem;
+}
+
+.hero_paragraph{
+    margin-bottom: 20px;
+}
+
+.cta{
+    display: inline-block;
+    background-color: rgb(67, 67, 223);
+    text-decoration: none;
+    padding: 13px 20px;
+    border-radius: 32px;
+    color: white;
+}
+
+/* about */
+
+.about{
+    text-align: center;
+}
+
+.subtitle{
+    color: var(--color-title);
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+.about_paragraph{
+    line-height: 1.7;
+}
+
+.about_main{
+    padding-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 3em;
+}
+
+.about_icons{
+    display: grid;
+    gap: 1em;
+    justify-items: center;
+}
+
+.about_icon{
+    width: 40px;
+}
+
+/* knowledge */
+
+.knowledge{
+    background-color: #e5e5f7;
+    background-image:  radial-gradient(#444cf7 0.5px, transparent 0.5px), radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0,10px 10px;
+}
+
+.knowledge_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    align-items: center;
+}
+
+.knowledge_picture{
+    grid-column: 2/3;
+}
+
+
+.knowledge_paragraph{
+    line-height: 1.7;
+    margin-bottom: 35px; 
+}
+
+
+.knowledge_img{
+    width: 100%;
+    display: block;
+}
+
+.price{
+    text-align: center;
+}
+
+.plans-container {
+    padding-top: 3em;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Para que se apilen en pantallas pequeñas */
+}
+
+/* Estilo individual de cada tarjeta de plan */
+.plan {
+    font-family: 'Poppins', sans-serif; /* Asegura la misma fuente */
+    background-color: #e9e8f5;
+    padding: 40px 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 300px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+.plan-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #64748b;
+    margin: 0 0 15px 0;
+}
+
+.plan-price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 30px 0;
+}
+
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+    width: 100%;
+}
+
+.plan-features li {
+    font-size: 1rem;
+    color: #475569;
+    margin-bottom: 15px;
+}
+
+.plan-button {
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #475569;
+    padding: 15px 0;
+    width: 100%;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.plan-button:hover {
+    background-color: #f1f5f9; /* Gris claro para el hover */
+    color: #1e293b;
+}
+
+/* Estilos para el plan destacado */
+.plan--highlighted {
+    background-color: #ff7f50; /* Coral */
+    color: #ffffff;
+}
+
+.plan--highlighted .plan-name {
+    color: #fee2d6;
+}
+
+.plan--highlighted .plan-price {
+    color: #ffffff;
+}
+
+.plan--highlighted .plan-features li {
+    color: #fee2d6;
+}
+
+.plan--highlighted .plan-button {
+    background-color: #7c2d12; /* Marrón oscuro */
+    color: #ffffff;
+}
+
+.plan--highlighted .plan-button:hover {
+    background-color: #5a200d;
+}
+
+.testimony{
+    background-color: #e5e5f7;
+}
+
+.testimony_container{
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    gap: 1em;
+    align-items: center;
+}
+
+.testimony_body{
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.testimony_body--show{
+    pointer-events: unset;
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.testimony_img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 30%;
+}
+
+.testimony_texts{
+    max-width: 700px;
+}
+
+.testimony_course{
+    background-color: #444cf7; /* Azul similar al de tu tema */
+    color: #fff;
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 8px;
+}
+
+.testimony_arrow{
+    width: 90%;
+    cursor: pointer;
+    justify-self: center;
+}
+
+.questions{
+    text-align: center;
+}
+
+.questions_paragraph{
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.questions_container{
+    display: grid;
+    gap: 1.5em;
+    justify-items: center;
+}
+
+.questions_item{
+    width: 100%;
+    max-width: 700px;
+    border: 1px solid #c9c9c9;
+    border-radius: 6px;
+    margin-bottom: 1em;
+    padding: 20px;
+}
+
+.questions_title{
+    display: flex;
+    font-size: 1.1rem;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    color: var(--color-title);
+    font-weight: 600;
+}
+
+/* Elimina el marcador de flecha por defecto del <summary> */
+.questions_title::-webkit-details-marker {
+    display: none;
+}
+
+.questions_answer{
+    padding: 20px 0 0 0;
+    line-height: 1.6;
+}
+
+.questions_arrow{
+    transition: transform .3s;
+}
+
+/* Rota la flecha cuando el <details> está abierto */
+.questions_item[open] .questions_arrow {
+    transform: rotate(180deg);
+}
+
+/* Sección "¿Listo para aprender?" */
+.questions_offer{
+    text-align: center;
+    padding-top: 100px;
+}
+
+.questions_copy{
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.footer{
+    background-color: #1D293F; /* Color de fondo oscuro */
+}
+
+.footer_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 60px;
+}
+
+.nav--footer{
+    padding-bottom: 20px;
+}
+
+.footer_title, .footer_newsletter{
+    color: #fff;
+    font-weight: 300;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.nav_link--footer{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Para que se ajuste en pantallas pequeñas */
+}
+
+.footer_inputs{
+    display: flex;
+    overflow: hidden; /* Para que los bordes redondeados se vean bien */
+}
+
+.footer_input{
+    background-color: #fff;
+    height: 50px;
+    display: block;
+    padding-left: 10px;
+    border-radius: 6px 0 0 6px;
+    border: none;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer_submit{
+    background-color: #2091F9;
+    height: 50px;
+    padding: 0 20px;
+    border-radius: 0 6px 6px 0;
+    border: none;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.footer_copy{
+    --padding-container: 30px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.footer_copyright{
+    font-weight: 300;
+}
+
+.footer_social{
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+    margin-bottom: 20px;
+}
+
+.footer_icons{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Responsividad para el footer */
+@media (max-width: 768px){
+    .footer_container{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer_form{
+        width: 100%;
+        max-width: 500px;
+        margin-top: 30px;
+    }
+
+    .footer_inputs{
+        width: 100%;
+    }
+
+    .footer_input{
+        flex-grow: 1; /* Para que ocupe el espacio disponible */
+    }
+}
+
+/* Clase de utilidad para accesibilidad: oculta visualmente un elemento pero lo mantiene para lectores de pantalla */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
